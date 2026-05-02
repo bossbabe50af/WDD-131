@@ -1,7 +1,6 @@
 let selectElem = document.querySelector('select');
 let logo = document.querySelector('.logo');
 
-
 selectElem.addEventListener('change', changeTheme);
 
 function changeTheme() {
