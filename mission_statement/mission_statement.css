@@ -65,3 +65,18 @@ img {
     width: 130px;
     margin: 55px auto 0;
 }
+
+.dark {
+    background-color: #333333;
+    color: white;
+}
+
+.dark .card {
+    background-color: #333333;
+    border-color: white;
+    color: white;
+}
+
+.dark h2 {
+    color: #7cb7ff;
+}
