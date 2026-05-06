@@ -1,14 +1,14 @@
 body {
     margin: 0;
-    background-color: #385ac9;
+    background-color: white;
     font-family: Georgia, "Times New Roman", serif;
     color: #222b58;
 }
 
 .card {
-    width: 900px;
-    margin: 50px auto;
-    padding: 80px 140px 60px;
+    width: 800px;
+    margin: 30px auto;
+    padding: 40px 120px 30px;
     background-color: white;
     border: 1px solid #9f9f9f;
     box-sizing: border-box;
@@ -19,21 +19,32 @@ h1 {
     font-size: 36px;
     font-weight: normal;
     letter-spacing: 4px;
-    margin: 0 0 10px;
+    margin: 20px 0 10px;
     text-transform: uppercase;
     white-space: nowrap;
 }
 
 h2 {
-    text-align: center;
+    text-align:
+        center;
     color: #006eb6;
     font-size: 14px;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     font-weight: normal;
     text-transform: uppercase;
     margin: 0 0 40px;
     padding-bottom: 8px;
     white-space: nowrap;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.card {
+    width: 900px;
+    margin: 35px auto;
+    padding: 55px 125px 45px;
+    background-color: white;
+    border: 1px solid #9f9f9f;
+    box-sizing: border-box;
 }
 
 p {
@@ -51,19 +62,19 @@ p:nth-of-type(2) {
 ol {
     font-size: 20px;
     line-height: 1.5;
-    padding-left: 40px;
+    padding-left: 35px;
     margin: 0;
 }
 
 li {
-    margin-bottom: 24px;
-    padding-left: 3px;
+    margin-bottom: 20px;
+    padding-left: 0;
 }
 
 img {
     display: block;
     width: 130px;
-    margin: 55px auto 0;
+    margin: 50px auto 0;
 }
 
 .dark {
