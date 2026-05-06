@@ -19,10 +19,9 @@ h1 {
     font-size: 36px;
     font-weight: normal;
     letter-spacing: 4px;
-    margin: 0 0 10px;
+    margin: 20px 0 10px;
     text-transform: uppercase;
     white-space: nowrap;
-
 }
 
 h2 {
@@ -30,7 +29,7 @@ h2 {
         center;
     color: #006eb6;
     font-size: 14px;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     font-weight: normal;
     text-transform: uppercase;
     margin: 0 0 40px;
@@ -40,9 +39,9 @@ h2 {
 }
 
 .card {
-    width: 800px;
-    margin: 30px auto;
-    padding: 40px 120px 30px;
+    width: 900px;
+    margin: 35px auto;
+    padding: 55px 125px 45px;
     background-color: white;
     border: 1px solid #9f9f9f;
     box-sizing: border-box;
@@ -50,8 +49,8 @@ h2 {
 
 p {
     font-size: 20px;
-    line-height: 1.4;
-    margin: 0 0 18px;
+    line-height: 1.5;
+    margin: 0 0 25px;
 }
 
 p:nth-of-type(2) {
@@ -63,16 +62,17 @@ p:nth-of-type(2) {
 ol {
     font-size: 20px;
     line-height: 1.5;
-    padding-left: 30px;
+    padding-left: 35px;
     margin: 0;
 }
 
 li {
-    margin-bottom: 14px;
+    margin-bottom: 20px;
+    padding-left: 0;
 }
 
 img {
     display: block;
     width: 130px;
-    margin: 20px auto 0;
+    margin: 50px auto 0;
 }
