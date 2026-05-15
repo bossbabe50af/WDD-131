@@ -19,13 +19,18 @@ h1 {
 
 .menu {
     margin: 0.5rem 0 0;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     padding: 10px;
-    display: none;
+    display: block;
 }
 
 main {
@@ -64,6 +69,10 @@ footer {
 }
 
 @media screen and (min-width: 1000px) {
+    .hide {
+        display: block;
+    }
+
     nav a {
         display: inline;
     }
