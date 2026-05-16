@@ -16,12 +16,6 @@ footer {
     background-color: lightblue;
 }
 
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-
-}
-
 h1 {
     text-align: center;
 }
@@ -33,9 +27,20 @@ section {
     border: 1px solid #ccc;
 }
 
+nav {
+    text-align: center;
+}
+
 nav a {
     padding: 20px;
     color: black;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-top: 1px solid gray;
+}
+
+.hide {
     display: none;
 }
 
@@ -56,16 +61,29 @@ nav a:hover {
     width: 30px;
     height: 4px;
     background-color: black;
-    margin: 5px 0;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
 }
 
 footer {
     text-align: center;
 }
 
-
 @media screen and (min-width: 700px) {
     main {
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
@@ -73,8 +91,13 @@ footer {
         display: none;
     }
 
+    .hide {
+        display: block;
+    }
+
     nav a {
         display: inline;
+        border-top: none;
     }
 
     nav {
