@@ -16,24 +16,28 @@ const closeButton = modal.querySelector(".close-viewer");
 gallery.addEventListener("click", openModal);
 closeButton.addEventListener("click", closeModal);
 
-function openModal(event) {
-    const img = event.target;
+function openModal(e) {
+    console.log(e.target);
 
-    if (img.tagName !== "IMG") {
-        return;
-    }
+    const img = e.target;
+    const src = img.getAttribute('src');
+    const alt = img.getAttribute('alt');
+    const full = src.replace('sm', 'full');
 
-    modalImage.src = img.src;
-    modalImage.alt = img.alt;
+    modalImage.src = full;
+    modalImage.alt = alt;
 
     modal.showModal();
 }
+
+closeButton.addEventListener('click', closeModal);
 
 function closeModal() {
     modal.close();
 }
 
-modal.addEventListener("click", function (event) {
+
+modal.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.close();
     }
