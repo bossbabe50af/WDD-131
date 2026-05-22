@@ -20,4 +20,4 @@ https://bossbabe50af.github.io/WDD-131/modals/modals.html
 
 https://bossbabe50af.github.io/WDD-131/ponder_wk5a/movies.html
 
-https://bossbabeaf.github.io/WDD131/blog.index.html
+https://bossbabe50af.github.io/WDD-131/blog/
