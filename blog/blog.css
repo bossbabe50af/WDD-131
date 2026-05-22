@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: white;
+}
+
+.page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 2rem auto;
+    border: 3px solid black;
+}
+
+/* header */
+
+header {
+    text-align: center;
+    padding: 1rem;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    color: #2d1b2f;
+    font-size: 1.7rem;
+    margin: 0 auto 1rem auto;
+}
+
+/* navigation */
+
+.main-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0.75rem 2rem;
+    display: grid;
+    grid-template-columns: 55px 55px 55px;
+    justify-content: end;
+    column-gap: 2rem;
+    border-top: 1px solid #e6a35c;
+    border-bottom: 1px solid #e6a35c;
+}
+
+.main-nav li {
+    text-align: center;
+}
+
+.main-nav a {
+    color: #b00020;
+    text-decoration: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* large device layout */
+
+#book-list {
+    padding: 2.5rem 0;
+}
+
+.book {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.book-details {
+    text-align: right;
+    border-right: 1px solid #e6a35c;
+    padding-right: 2rem;
+    font-size: 0.8rem;
+}
+
+.book-details p {
+    margin: 0 0 0.6rem 0;
+
+}
+
+.book-content {
+    padding-left: 2rem;
+}
+
+.book h2 {
+    font-family: Georgia, serif;
+    color: #b00020;
+    font-size: 1.3rem;
+    text-align: left;
+    margin: 0 0 1rem 0;
+}
+
+.book img {
+    width: 250px;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.book-content p {
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    text-align: left;
+    width: 580px;
+    margin: 0.5rem 0 0 0;
+}
+
+/* footer */
+
+footer {
+    border-top: 1px solid #e6a35c;
+    text-align: center;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+}
+
+/* mobile only */
+
+@media (max-width: 600px) {
+    .page {
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-nav {
+        grid-template-columns: 70px 70px 70px;
+        justify-content: end;
+        column-gap: 0.7rem;
+        padding: 0.6rem 1rem;
+    }
+
+    #book-list {
+        padding: 1.5rem;
+    }
+
+    .book {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .book-details {
+        border-right: none;
+        border-bottom: 1px solid #e6a35c;
+        padding-right: 0;
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.75rem;
+    }
+
+    .book-content {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .book h2 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .book img {
+        width: 115px;
+    }
+
+    .book-content p {
+        width: 360px;
+        font-size: 0.9rem;
+        margin: 0 auto;
+    }
+}
