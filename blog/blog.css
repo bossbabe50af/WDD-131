@@ -115,6 +115,22 @@ footer {
 
 /* mobile only */
 
+@media (max-width: 900px) {
+
+    .book-content p {
+        width: 420px;
+    }
+
+}
+
+@media (max-width: 642px) {
+
+    .book-content p {
+        width: 350px;
+    }
+
+}
+
 @media (max-width: 600px) {
     .page {
         width: 90%;
