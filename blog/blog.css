@@ -60,9 +60,9 @@ h1 {
 
 .book {
     display: grid;
-    grid-template-columns: 30% 70%;
-    max-width: 850px;
-    margin: 0 auto;
+    grid-template-columns: 390px 1fr;
+    max-width: 1000px;
+    margin: 0 auto 3rem auto;
 }
 
 .book-details {
@@ -115,7 +115,7 @@ footer {
 
 /* mobile only */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .book-content p {
         width: 420px;
@@ -123,10 +123,26 @@ footer {
 
 }
 
-@media (max-width: 642px) {
+@media (max-width: 860px) {
 
     .book-content p {
         width: 350px;
+    }
+
+}
+
+@media (max-width: 795px) {
+
+    .book-content p {
+        width: 300px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .book-content p {
+        width: 250px;
     }
 
 }
