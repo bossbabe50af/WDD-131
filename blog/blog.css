@@ -139,7 +139,7 @@ footer {
 
 }
 
-@media (max-width: 700px) {
+@media(max-width: 736px) {
 
     .book-content p {
         width: 250px;
