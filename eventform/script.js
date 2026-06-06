@@ -1,7 +1,4 @@
 const form = document.querySelector("#ticketForm");
-const firstName = document.querySelector("#firstName");
-const lastName = document.querySelector("#lastName");
-const email = document.querySelector("#email");
 const type = document.querySelector("#type");
 const eventDate = document.querySelector("#eventDate");
 const extraInfo = document.querySelector("#extraInfo");
@@ -11,82 +8,123 @@ const extraHelp = document.querySelector("#extraHelp");
 const errors = document.querySelector("#errors");
 const ticketInfo = document.querySelector("#ticketInfo");
 
-type.addEventListener("change", function () {
+
+function updateExtraField() {
+    const value = type.value;
+
     extraInput.value = "";
 
-    if (type.value === "student") {
+    if (value === "student") {
         extraInfo.classList.remove("hide");
         extraLabel.textContent = "Student I#";
         extraHelp.textContent = "Enter your 9 digit student I number.";
-    } else if (type.value === "guest") {
+    }
+    else if (value === "guest") {
         extraInfo.classList.remove("hide");
         extraLabel.textContent = "Access Code";
         extraHelp.textContent = "Enter the access code EVENT131.";
-    } else {
+    }
+    else {
         extraInfo.classList.add("hide");
         extraLabel.textContent = "";
         extraHelp.textContent = "";
     }
-});
+}
+
+
+function isPastDate(value) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const selectedDate = new Date(value);
+
+    return selectedDate <= today;
+}
+
+
+function isValidStudentId(value) {
+    return /^\d{9}$/.test(value);
+}
+
+
+function isValidAccessCode(value) {
+    return value === "EVENT131";
+}
+
+
+type.addEventListener("change", updateExtraField);
+updateExtraField();
+
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    errors.innerHTML = "";
-    ticketInfo.innerHTML = "";
+    errors.textContent = "";
+    ticketInfo.textContent = "";
 
-    let messages = [];
+    const firstName = form.firstName.value.trim();
+    const lastName = form.lastName.value.trim();
+    const email = form.email.value.trim();
+    const ticketType = form.type.value;
+    const date = form.eventDate.value;
+    const extraValue = form.extraInput.value.trim();
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
 
-    const selectedDate = new Date(eventDate.value);
+    // validation of required feilds
 
-    if (firstName.value.trim() === "") {
-        messages.push("First name is required");
+    if (!firstName) {
+        errors.textContent = "First name is required.";
+        return;
+    }
+    if (!lastName) {
+        errors.textContent = "Last name is required.";
+        return;
+    }
+    if (!email) {
+        errors.textContent = "Email is required.";
+        return;
+    }
+    if (!ticketType) {
+        errors.textContent = "Please choose student or guest.";
+        return;
+    }
+    if (!date) {
+        errors.textContent = "Event date is required.";
+        return;
     }
 
-    if (lastName.value.trim() === "") {
-        messages.push("Last name is required");
+    // validation of the date 
+
+    if (isPastDate(date)) {
+        errors.textContent = "Event date must be later than today.";
+        return;
     }
 
-    if (email.value.trim() === "") {
-        messages.push("Email is required");
+
+    // validation of student ticket
+
+    if (ticketType === "student" && !isValidStudentId(extraValue)) {
+        errors.textContent = "Student I# must be 9 digits.";
+        return;
     }
 
-    if (type.value === "") {
-        messages.push("Please choose student or guest");
+
+    // validation of guest ticket
+
+    if (ticketType === "guest" && !isValidAccessCode(extraValue)) {
+        errors.textContent = "Access code must be EVENT131.";
+        return;
     }
 
-    if (eventDate.value === "") {
-        messages.push("Event date is required");
-    } else if (selectedDate <= today) {
-        messages.push("Event date must be later than today");
-    }
 
-    if (type.value === "student" && !/^\d{9}$/.test(extraInput.value.trim())) {
-        messages.push("Student I# must be 9 digits");
-    }
+    ticketInfo.innerHTML = `
+        <h2>Ticket Created</h2>
+        <p>${firstName} ${lastName}</p>
+        <p>Email: ${email}</p>
+        <p>Type: ${ticketType}</p>
+        <p>Date: ${date}</p>
+    `;
 
-    if (type.value === "guest" && extraInput.value.trim() !== "EVENT131") {
-        messages.push("Access Code must be EVENT131");
-    }
-
-    if (messages.length > 0) {
-        errors.innerHTML = messages.map(function (message) {
-            return `<p>${message}</p>`;
-        }).join("");
-    } else {
-        ticketInfo.innerHTML = `
-            <h2>Ticket Created</h2>
-            <p>${firstName.value.trim()} ${lastName.value.trim()}</p>
-            <p>${type.value}</p>
-            <p>${eventDate.value}</p>
-        `;
-
-        form.reset();
-        extraInfo.classList.add("hide");
-        extraLabel.textContent = "";
-        extraHelp.textContent = "";
-    }
+    form.reset();
+    updateExtraField();
 });
