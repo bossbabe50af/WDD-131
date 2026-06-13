@@ -54,45 +54,43 @@ document.querySelector('#enrollStudent').addEventListener('click', function () {
 
 const sectionInput = document.querySelector('#sectionNumber');
 
-sectionInput.style.width = '140px';
-
-const hoverMenu = document.createElement('div');
-hoverMenu.innerHTML = `
+const choiceBox = document.createElement('div');
+choiceBox.innerHTML = `
     <div class="section-choice" style="padding: 8px;">1</div>
     <div class="section-choice" style="padding: 8px;">2</div>
 `;
 
-hoverMenu.style.display = 'none';
-hoverMenu.style.position = 'absolute';
-hoverMenu.style.backgroundColor = 'white';
-hoverMenu.style.border = '1px solid #999';
-hoverMenu.style.width = '140px';
-hoverMenu.style.fontSize = '16px';
-hoverMenu.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.2)';
-hoverMenu.style.zIndex = '1000';
-hoverMenu.style.cursor = 'pointer';
+choiceBox.style.display = 'none';
+choiceBox.style.position = 'absolute';
+choiceBox.style.backgroundColor = 'white';
+choiceBox.style.border = '1px solid #999';
+choiceBox.style.width = '140px';
+choiceBox.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.2)';
+choiceBox.style.cursor = 'pointer';
+choiceBox.style.zIndex = '1000';
 
-document.body.appendChild(hoverMenu);
+document.body.appendChild(choiceBox);
 
-sectionInput.addEventListener('mouseenter', function () {
+sectionInput.addEventListener('click', function () {
     const rect = sectionInput.getBoundingClientRect();
 
-    hoverMenu.style.left = `${rect.left + window.scrollX}px`;
-    hoverMenu.style.top = `${rect.bottom + window.scrollY}px`;
-    hoverMenu.style.display = 'block';
+    choiceBox.style.left = `${rect.left + window.scrollX}px`;
+    choiceBox.style.top = `${rect.bottom + window.scrollY}px`;
+    choiceBox.style.display = 'block';
 });
 
-hoverMenu.addEventListener('mouseenter', function () {
-    hoverMenu.style.display = 'block';
-});
-
-hoverMenu.addEventListener('click', function (event) {
+choiceBox.addEventListener('click', function (event) {
     if (event.target.classList.contains('section-choice')) {
         sectionInput.value = event.target.textContent;
-        hoverMenu.style.display = 'none';
+        choiceBox.style.display = 'none';
     }
 });
 
-hoverMenu.addEventListener('mouseleave', function () {
-    hoverMenu.style.display = 'none';
+document.addEventListener('click', function (event) {
+    if (
+        event.target !== sectionInput &&
+        !choiceBox.contains(event.target)
+    ) {
+        choiceBox.style.display = 'none';
+    }
 });
