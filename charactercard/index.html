@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Character Card</title>
+    <meta name="description" content="Swamp character card with attack and level up buttons.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Swamp Character Card">
+    <meta property="og:description" content="Swamp character card with attack and level up buttons.">
+    <meta property="og:url" content="https://bossbabe50af.github.io/WDD-131/charactercard/">
+    <meta property="og:image"
+        content="https://bossbabe50af.github.io/WDD-131/charactercard/images/swamp-character.webp">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Swamp Character Card">
+    <meta name="twitter:description" content="A JavaScript character card with attack and level up buttons.">
+    <meta name="twitter:image"
+        content="https://bossbabe50af.github.io/WDD-131/charactercard/images/swamp-character.webp">
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.webp">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="card.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <section class="card">
+            <img id="characterImage" class="image" src="./images/swamp-character.webp"
+                alt="Swamp creature standing in dark water">
+
+            <h1 id="characterName" class="name"></h1>
+
+            <div class="stats">
+                <p><strong>Class:</strong> <span id="characterClass"></span></p>
+                <p><strong>Level:</strong> <span id="characterLevel"></span></p>
+                <p><strong>Health:</strong> <span id="characterHealth"></span></p>
+            </div>
+
+            <p id="message" class="message" aria-live="polite"></p>
+
+            <div class="buttons">
+                <button id="attackButton" type="button">Attacked</button>
+                <button id="levelButton" type="button">Level Up</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

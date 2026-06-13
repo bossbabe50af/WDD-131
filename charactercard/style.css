@@ -1,0 +1,78 @@
+body {
+    font-family: "Palatino Linotype", sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+}
+
+.card {
+    background: linear-gradient(#313131, #111);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    width: 400px;
+    margin: 100px auto;
+    overflow: hidden;
+}
+
+.image {
+    width: 400px;
+    height: 400px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    background-color: transparent;
+    border-radius: 15px 15px 0 0;
+}
+
+.name {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+    padding: 18px 0 18px 35px;
+    background-color: #5d747b;
+}
+
+.stats {
+    margin: 22px 15px 7px 35px;
+    text-align: left;
+}
+
+.stats p {
+    margin: 8px 0;
+    color: #f0f4f8;
+    font-size: 1.05rem;
+}
+
+.message {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    min-height: 22px;
+    margin: 5px 20px;
+}
+
+.buttons {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+button {
+    padding: 8px 16px;
+    margin: 20px 22px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #5d747b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+button:hover {
+    background-color: #58605a;
+}
+
+button:disabled {
+    background-color: #777;
+    cursor: not-allowed;
+}
