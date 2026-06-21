@@ -21,32 +21,36 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap
-    " rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
     <title>Recipe Book</title>
 </head>
 
 <body>
     <header>
-        <img src="images/recipe-book.png" alt="recipe book logo">
+        <img src="images/recipe-book.png" alt="Recipe Book logo">
         <h1>Recipe Book</h1>
     </header>
 
     <main>
         <div class="search">
-            <input type="text" placeholder="Find a recipe">
-            <button>
-                <img src="images/search.svg" alt="search icon">
+            <label for="search" class="visually-hidden">Find a recipe</label>
+
+            <input type="text" id="search" placeholder="Find a recipe">
+
+            <button type="button" aria-label="Search recipes">
+                <img src="images/search.svg" alt="">
             </button>
         </div>
 
         <section class="recipe">
-            <img src="images/apple-crisp.jpg" alt="apple crisp">
+            <img src="images/apple-crisp.jpg" alt="Apple Crisp dessert">
 
             <div class="recipe-info">
                 <p class="tag">dessert</p>
+
                 <h2>Apple Crisp</h2>
 
                 <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
@@ -67,11 +71,18 @@
 
     <footer>
         <div class="social">
-            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates
-              -->
-            <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
-            <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
-            <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates -->
+            <a href="#">
+                <img src="images/instagram_icon.svg" alt="Instagram">
+            </a>
+
+            <a href="#">
+                <img src="images/youtube_icon.svg" alt="YouTube">
+            </a>
+
+            <a href="#">
+                <img src="images/pinterest_icon.svg" alt="Pinterest">
+            </a>
         </div>
 
         <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">
