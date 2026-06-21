@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 24px 16px 40px;
+    color: #111;
+}
+
+h1,
+h2 {
+    font-family: "Amatic SC", cursive;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3px;
+    margin-bottom: 16px;
+}
+
+header img {
+    width: 140px;
+}
+
+header h1 {
+    font-size: 5.5rem;
+    line-height: 1;
+    padding-bottom: 8px;
+    letter-spacing: -3px;
+    word-spacing: -13px;
+}
+
+main,
+footer {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.search {
+    display: flex;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.search input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #111;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+}
+
+.search button {
+    width: 45px;
+    border: 2px solid #111;
+    background-color: white;
+    border-radius: 0 6px 6px 0;
+}
+
+.search button img {
+    width: 22px;
+}
+
+.recipe {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    border: 2px solid #111;
+    border-radius: 6px;
+    padding: 14px;
+}
+
+.recipe>img {
+    width: 48%;
+    display: block;
+}
+
+.recipe-info {
+    width: 52%;
+}
+
+.tag {
+    display: inline-block;
+    border: 1px solid #111;
+    background-color: #e8e8e8;
+    padding: 3px 8px;
+    margin: 0 0 12px;
+    font-size: 0.9rem;
+}
+
+.recipe-info h2 {
+    color: #1e9bf0;
+    font-size: 4rem;
+}
+
+.rating {
+    font-size: 1.2rem;
+}
+
+.description {
+    display: block;
+    font-size: 0.9rem;
+}
+
+footer {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.8rem;
+}
+
+.social {
+    display: flex;
+    gap: 8px;
+}
+
+.social img {
+    width: 28px;
+}
+
+/* Mobile layout */
+@media screen and (max-width: 700px) {
+    header img {
+        width: 150px;
+    }
+
+    header h1 {
+        font-size: 5.5rem;
+    }
+
+    main,
+    footer {
+        max-width: 680px;
+    }
+
+    .recipe {
+        display: block;
+    }
+
+    .recipe>img {
+        width: 100%;
+    }
+
+    .recipe-info {
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .description {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
