@@ -79,6 +79,7 @@ footer {
     border: 2px solid #111;
     border-radius: 6px;
     padding: 14px;
+
 }
 
 .recipe>img {
@@ -101,7 +102,7 @@ footer {
 
 .recipe-info h2 {
     color: #1e9bf0;
-    font-size: 4rem;
+    font-size: 2.5rem;
 }
 
 .rating {
@@ -149,6 +150,7 @@ footer {
 
     .recipe {
         display: block;
+
     }
 
     .recipe>img {
