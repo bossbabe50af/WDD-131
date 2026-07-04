@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev Toolkit Project Plan</title>
+    <meta name="description" content="Web Dev Toolkit project plan for WDD 131.">
+    <meta name="author" content="April Ferris">
+    <link rel="stylesheet" href="styles/app-plan.css">
+</head>
+
+<body>
+    <header>
+        <h1>Web Dev Toolkit Project Plan</h1>
+        <p>April Ferris</p>
+        <p>WDD 131</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Folder Structure and Files</h2>
+            <img src="images/folder-structure.png" alt="Web Dev Toolkit folder structure">
+
+            <ul>
+                <li><strong>app-plan.html</strong> — Home / opening page</li>
+                <li><strong>index.html</strong> — Learning Topics page</li>
+                <li><strong>toolkit.html</strong> — Interactive Toolkit page</li>
+                <li><strong>styles/app-plan.css</strong> — Site plan styling</li>
+                <li><strong>styles/styles.css</strong> — Main website styling</li>
+                <li><strong>scripts/app.js</strong> — JavaScript functionality</li>
+                <li><strong>images/</strong> — Logo, color palette, and wireframes</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Overview</h2>
+
+            <h3>Purpose</h3>
+            <p>
+                The purpose of Web Dev Toolkit is to help beginner web development students
+                review and practice the major skills taught in WDD 131. The site will organize
+                HTML, CSS, JavaScript, accessibility, responsive design, forms, arrays, objects,
+                sorting, and filtering into one interactive learning platform.
+            </p>
+
+            <h3>Audience</h3>
+            <p>
+                The audience for this website is beginner web development students who are learning
+                how to build valid, responsive, accessible, and interactive websites. The site is
+                designed for students who need simple explanations, visual examples, and practice
+                tools to help them understand class concepts.
+            </p>
+
+            <h3>Dynamic Elements</h3>
+            <p>
+                JavaScript will be used to create interactive learning features throughout the site.
+                The Learning Topics page will display topic cards from an array of objects. Each
+                object will include a topic title, category, difficulty level, description, and image.
+            </p>
+
+            <p>
+                Users will be able to search for topics, filter topics by category, and sort topics
+                alphabetically or by difficulty level. JavaScript will also be used for DOM interaction,
+                including updating the displayed cards, showing a “no results found” message, opening
+                and closing navigation, and responding to user events.
+            </p>
+
+            <p>
+                The Toolkit page will include interactive examples where users can click buttons,
+                submit a form, answer a quick question, and see feedback on the page. Conditional
+                logic will be used to check user choices and display different messages depending
+                on the result.
+            </p>
+        </section>
+
+        <section>
+            <h2>Branding</h2>
+
+            <h3>Website Logo</h3>
+            <p>
+                The Web Dev Toolkit logo uses a web-development style with code symbols and a
+                professional technology design. It represents learning, practicing, building, and
+                exploring web development skills.
+            </p>
+
+            <img src="images/logo.png" alt="Web Dev Toolkit logo">
+        </section>
+
+        <section>
+            <h2>Style Guide</h2>
+
+            <h3>Color Palette</h3>
+            <img src="images/color-palette.png" alt="Web Dev Toolkit color palette">
+
+            <p>
+                Palette URL:
+                <a href="https://coolors.co/f7f8fa-ffffff-1f3a5f-4a6fa5-f4b942-2d3748-d9e2ec">
+                    https://coolors.co/f7f8fa-ffffff-1f3a5f-4a6fa5-f4b942-2d3748-d9e2ec
+                </a>
+            </p>
+
+            <ul>
+                <li><strong>Primary:</strong> Deep Navy — #1F3A5F</li>
+                <li><strong>Secondary:</strong> Steel Blue — #4A6FA5</li>
+                <li><strong>Accent 1:</strong> Warm Gold — #F4B942</li>
+                <li><strong>Accent 2:</strong> Soft Light Gray — #D9E2EC</li>
+            </ul>
+
+            <h3>Fonts</h3>
+            <p><strong>Heading Font:</strong> Georgia, serif</p>
+            <p><strong>Body Font:</strong> Arial, sans-serif</p>
+        </section>
+
+        <section>
+            <h2>Pseudocode for Your Project</h2>
+
+            <h3>When the Website Loads</h3>
+            <ol>
+                <li>Load the page.</li>
+                <li>Load the array of web development topics.</li>
+                <li>Create topic cards from the array of objects.</li>
+                <li>Display all topic cards on the Learning Topics page.</li>
+                <li>Display the featured topic.</li>
+            </ol>
+
+            <h3>Navigation</h3>
+            <ol>
+                <li>Wait for the user to click a navigation link.</li>
+                <li>If Home is selected, display the Home page.</li>
+                <li>If Topics is selected, display the Learning Topics page.</li>
+                <li>If Toolkit is selected, display the Toolkit page.</li>
+                <li>Highlight the active navigation item.</li>
+            </ol>
+
+            <h3>Search</h3>
+            <ol>
+                <li>Wait for the user to type in the search box.</li>
+                <li>Compare the search text to each topic title.</li>
+                <li>Display only matching topic cards.</li>
+                <li>If no topics match, display a “No Topics Found” message.</li>
+            </ol>
+
+            <h3>Filter</h3>
+            <ol>
+                <li>Wait for the user to choose a category.</li>
+                <li>If “All” is selected, display every topic.</li>
+                <li>Otherwise, display only the topics in the selected category.</li>
+                <li>Update the topic cards on the page.</li>
+            </ol>
+
+            <h3>Sort</h3>
+            <ol>
+                <li>Wait for the user to choose a sorting option.</li>
+                <li>If A–Z is selected, sort topics alphabetically.</li>
+                <li>If Z–A is selected, reverse the alphabetical order.</li>
+                <li>If Difficulty is selected, sort by difficulty level.</li>
+                <li>Redisplay the topic cards.</li>
+            </ol>
+
+            <h3>Interactive Examples</h3>
+            <ol>
+                <li>Wait for the user to interact with the example.</li>
+                <li>Detect button clicks or form input.</li>
+                <li>Update the example using JavaScript.</li>
+                <li>Display the results immediately.</li>
+            </ol>
+
+            <h3>Knowledge Check</h3>
+            <ol>
+                <li>Wait for the user to answer a question.</li>
+                <li>Check the selected answer.</li>
+                <li>If the answer is correct, display a success message.</li>
+                <li>Otherwise, display a message encouraging the user to try again.</li>
+            </ol>
+
+            <h3>Feedback Form</h3>
+            <ol>
+                <li>Wait for the user to complete the form.</li>
+                <li>Validate all required fields.</li>
+                <li>If information is missing, display an error message.</li>
+                <li>Otherwise, display a confirmation message.</li>
+            </ol>
+
+            <h3>Accessibility</h3>
+            <ol>
+                <li>Display descriptive alt text for all images.</li>
+                <li>Provide labels for all form controls.</li>
+                <li>Allow keyboard navigation.</li>
+                <li>Maintain sufficient color contrast throughout the website.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Wireframes</h2>
+
+            <h3>Page 1: app-plan.html</h3>
+            <p>
+                The opening page will introduce Web Dev Toolkit, explain the project purpose,
+                identify the audience, show the branding, and include the project plan.
+            </p>
+            <img src="images/page1-wireframe.png" alt="Wireframe for app-plan.html">
+
+            <h3>Page 2: index.html</h3>
+            <p>
+                The Learning Topics page will include a search bar, category filter, sort option,
+                topic cards, and a footer.
+            </p>
+            <img src="images/page2-wireframe.png" alt="Wireframe for index.html">
+
+            <h3>Page 3: toolkit.html</h3>
+            <p>
+                The Interactive Toolkit page will include a demo area, code example, playground,
+                mini challenge, feedback area, and footer.
+            </p>
+            <img src="images/page3-wireframe.png" alt="Wireframe for toolkit.html">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Web Dev Toolkit | April Ferris | WDD 131</p>
+    </footer>
+</body>
+
+</html>
