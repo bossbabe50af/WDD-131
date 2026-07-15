@@ -25,7 +25,6 @@
                 <li><strong>app-plan.html</strong> — Site plan document</li>
                 <li><strong>index.html</strong> — Home page</li>
                 <li><strong>topic.html</strong> — Learning Topics page</li>
-                <li><strong>toolkit.html</strong> — Interactive Toolkit page</li>
                 <li><strong>styles/app-plan.css</strong> — Site plan styling</li>
                 <li><strong>styles/styles.css</strong> — Main website styling</li>
                 <li><strong>scripts/app.js</strong> — JavaScript functionality</li>
@@ -62,15 +61,14 @@
             <p>
                 Users will be able to search for topics, filter topics by category, and sort topics
                 alphabetically or by difficulty level. JavaScript will also be used for DOM interaction,
-                including updating the displayed cards, showing a “no results found” message, opening
+                including updating the displayed cards, showing a “No Topics Found” message, opening
                 and closing navigation, and responding to user events.
             </p>
 
             <p>
-                The Toolkit page will include interactive examples where users can click buttons,
-                submit a form, answer a quick question, and see feedback on the page. Conditional
-                logic will be used to check user choices and display different messages depending
-                on the result.
+                Functions will organize the JavaScript code, conditionals will determine which
+                topics should be displayed, and array methods such as forEach(), filter(), and
+                sort() will be used to process and display the topic information.
             </p>
         </section>
 
@@ -80,8 +78,8 @@
             <h3>Page 1: index.html — Home Page</h3>
             <p>
                 The Home page will introduce Web Dev Toolkit, explain what the site is for,
-                highlight the purpose and audience, and guide users to the Learning Topics
-                and Interactive Toolkit pages.
+                and guide users to the Learning Topics page. The page will include the centered
+                Web Dev Toolkit logo, introductory content, and a View Topics button.
             </p>
 
             <h3>Page 2: topic.html — Learning Topics Page</h3>
@@ -89,13 +87,6 @@
                 The Learning Topics page will include searchable, filterable, and sortable
                 WDD 131 topic cards. This page will demonstrate arrays, objects, DOM interaction,
                 events, filtering, sorting, and responsive card layouts.
-            </p>
-
-            <h3>Page 3: toolkit.html — Interactive Toolkit Page</h3>
-            <p>
-                The Interactive Toolkit page will include practice demos, code examples,
-                a playground, mini challenges, a knowledge check, form interaction,
-                conditionals, and feedback messages.
             </p>
         </section>
 
@@ -106,7 +97,8 @@
             <p>
                 The Web Dev Toolkit logo uses a web-development style with code symbols and a
                 professional technology design. It represents learning, practicing, building, and
-                exploring web development skills.
+                exploring web development skills. The logo image will be used by itself without
+                additional text beside it.
             </p>
 
             <img src="images/logo.png" alt="Web Dev Toolkit logo">
@@ -144,10 +136,9 @@
             <h3>When the Website Loads</h3>
             <ol>
                 <li>Load the page.</li>
-                <li>Load the array of web development topics.</li>
+                <li>If the Learning Topics page is loaded, load the array of web development topics.</li>
                 <li>Create topic cards from the array of objects.</li>
                 <li>Display all topic cards on the Learning Topics page.</li>
-                <li>Display the featured topic.</li>
             </ol>
 
             <h3>Navigation</h3>
@@ -155,34 +146,32 @@
                 <li>Wait for the user to click a navigation link.</li>
                 <li>If Home is selected, display the Home page.</li>
                 <li>If Topics is selected, display the Learning Topics page.</li>
-                <li>If Toolkit is selected, display the Toolkit page.</li>
                 <li>Highlight the active navigation item.</li>
+            </ol>
+
+            <h3>View Topics Button</h3>
+            <ol>
+                <li>Wait for the user to click the View Topics button.</li>
+                <li>Open the Learning Topics page.</li>
             </ol>
 
             <h3>Search, Filter, and Sort</h3>
             <ol>
                 <li>Wait for the user to type in the search box or choose a dropdown option.</li>
-                <li>Use filter to display matching topics.</li>
+                <li>Use filter() to display matching topics.</li>
                 <li>Use conditionals to check the selected category.</li>
-                <li>Use sort to organize topics alphabetically or by difficulty.</li>
+                <li>Use sort() to organize topics alphabetically or by difficulty.</li>
                 <li>Redisplay the topic cards.</li>
                 <li>If no topics match, display a “No Topics Found” message.</li>
             </ol>
 
-            <h3>Interactive Examples</h3>
+            <h3>Topic Cards</h3>
             <ol>
-                <li>Wait for the user to interact with an example.</li>
-                <li>Detect button clicks or form input.</li>
-                <li>Update the example using JavaScript.</li>
-                <li>Display the results immediately.</li>
-            </ol>
-
-            <h3>Knowledge Check and Feedback Form</h3>
-            <ol>
-                <li>Wait for the user to answer a question or complete a form.</li>
-                <li>Check the selected answer or required input.</li>
-                <li>If the answer or input is valid, display a success message.</li>
-                <li>Otherwise, display a helpful error or try-again message.</li>
+                <li>Create an array of topic objects.</li>
+                <li>Store the title, category, difficulty, description, and image in each object.</li>
+                <li>Select the topic card container from the DOM.</li>
+                <li>Use forEach() to loop through the topic data.</li>
+                <li>Create and display a card for each topic.</li>
             </ol>
 
             <h3>Accessibility</h3>
@@ -191,6 +180,7 @@
                 <li>Provide labels for all form controls.</li>
                 <li>Allow keyboard navigation.</li>
                 <li>Maintain sufficient color contrast throughout the website.</li>
+                <li>Use visible focus indicators for interactive elements.</li>
             </ol>
         </section>
 
@@ -199,24 +189,21 @@
 
             <h3>Page 1: index.html — Home Page</h3>
             <p>
-                The Home page will introduce Web Dev Toolkit and guide users to the main
-                learning areas of the site.
+                The Home page will introduce Web Dev Toolkit and guide users to the Learning
+                Topics page. The logo will be centered, the main action will be View Topics,
+                and Quick Links will not be included in the footer.
             </p>
+
             <img src="images/page1-wireframe.png" alt="Wireframe for index.html home page">
 
             <h3>Page 2: topic.html — Learning Topics Page</h3>
             <p>
                 The Learning Topics page will include a search bar, category filter,
-                sort option, topic cards, and footer.
+                sort option, topic cards, and footer. Quick Links will not be included
+                in the footer.
             </p>
-            <img src="images/page2-wireframe.png" alt="Wireframe for topic.html learning topics page">
 
-            <h3>Page 3: toolkit.html — Interactive Toolkit Page</h3>
-            <p>
-                The Interactive Toolkit page will include a demo area, code example,
-                playground, mini challenge, feedback area, and footer.
-            </p>
-            <img src="images/page3-wireframe.png" alt="Wireframe for toolkit.html interactive toolkit page">
+            <img src="images/page2-wireframe.png" alt="Wireframe for topic.html learning topics page">
         </section>
     </main>
 
