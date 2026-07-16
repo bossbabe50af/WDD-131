@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Learning Topics | Web Dev Toolkit</title>
+
+    <meta name="description" content="Search, filter, and sort WDD 131 web development learning topics.">
+
+    <meta name="author" content="April Ferris">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/topic.css">
+</head>
+
+<body class="topics-page">
+
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+
+    <header class="site-header">
+        <div class="header-container">
+
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="" class="site-logo">
+
+                <span class="site-title">
+                    Web Dev Toolkit
+                </span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+
+                <a href="topic.html" class="active" aria-current="page">
+                    Topics
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section class="topics-intro">
+            <div class="section-container">
+
+                <h1>Learning Topics</h1>
+
+                <p>
+                    Browse, search, filter, and sort the major web development
+                    concepts covered throughout WDD 131.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="topic-controls-section" aria-labelledby="topic-controls-heading">
+            <div class="section-container">
+
+                <h2 id="topic-controls-heading" class="visually-hidden">
+                    Search, filter, and sort learning topics
+                </h2>
+
+                <form class="topic-controls" id="topic-controls" role="search">
+
+                    <div class="control-group">
+                        <label for="topic-search">
+                            Search Topics
+                        </label>
+
+                        <input type="search" id="topic-search" name="topic-search"
+                            placeholder="Search by topic title..." autocomplete="off">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="category-filter">
+                            Filter by Category
+                        </label>
+
+                        <select id="category-filter" name="category-filter">
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="html">
+                                HTML
+                            </option>
+
+                            <option value="css">
+                                CSS
+                            </option>
+
+                            <option value="javascript">
+                                JavaScript
+                            </option>
+
+                            <option value="accessibility">
+                                Accessibility
+                            </option>
+
+                            <option value="responsive-design">
+                                Responsive Design
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="sort-topics">
+                            Sort By
+                        </label>
+
+                        <select id="sort-topics" name="sort-topics">
+                            <option value="az">
+                                A–Z
+                            </option>
+
+                            <option value="za">
+                                Z–A
+                            </option>
+
+                            <option value="beginner-advanced">
+                                Beginner to Advanced
+                            </option>
+
+                            <option value="advanced-beginner">
+                                Advanced to Beginner
+                            </option>
+                        </select>
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+
+        <section class="topics-results-section" aria-labelledby="topics-results-heading">
+            <div class="section-container">
+
+                <h2 id="topics-results-heading" class="visually-hidden">
+                    Learning topic results
+                </h2>
+
+                <p id="results-status" class="results-status" role="status" aria-live="polite" aria-atomic="true">
+                    Showing all learning topics.
+                </p>
+
+                <div id="topic-grid" class="topic-grid">
+
+                    <article class="topic-card" data-title="HTML Basics" data-category="html"
+                        data-difficulty="beginner">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>HTML Basics</h3>
+
+                        <p>Category: HTML</p>
+                        <p>Difficulty: Beginner</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Meta Tags" data-category="html" data-difficulty="beginner">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Meta Tags</h3>
+
+                        <p>Category: HTML</p>
+                        <p>Difficulty: Beginner</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Forms" data-category="html" data-difficulty="intermediate">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Forms</h3>
+
+                        <p>Category: HTML</p>
+                        <p>Difficulty: Intermediate</p>
+                    </article>
+
+                    <article class="topic-card" data-title="CSS Basics" data-category="css" data-difficulty="beginner">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>CSS Basics</h3>
+
+                        <p>Category: CSS</p>
+                        <p>Difficulty: Beginner</p>
+                    </article>
+
+                    <article class="topic-card" data-title="CSS Selectors" data-category="css"
+                        data-difficulty="beginner">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>CSS Selectors</h3>
+
+                        <p>Category: CSS</p>
+                        <p>Difficulty: Beginner</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Flexbox" data-category="css" data-difficulty="intermediate">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Flexbox</h3>
+
+                        <p>Category: CSS</p>
+                        <p>Difficulty: Intermediate</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Reset and Normalize CSS" data-category="css"
+                        data-difficulty="intermediate">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Reset and Normalize CSS</h3>
+
+                        <p>Category: CSS</p>
+                        <p>Difficulty: Intermediate</p>
+                    </article>
+
+                    <article class="topic-card" data-title="JavaScript Basics" data-category="javascript"
+                        data-difficulty="beginner">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>JavaScript Basics</h3>
+
+                        <p>Category: JavaScript</p>
+                        <p>Difficulty: Beginner</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Functions" data-category="javascript"
+                        data-difficulty="beginner">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Functions</h3>
+
+                        <p>Category: JavaScript</p>
+                        <p>Difficulty: Beginner</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Conditionals" data-category="javascript"
+                        data-difficulty="beginner">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Conditionals</h3>
+
+                        <p>Category: JavaScript</p>
+                        <p>Difficulty: Beginner</p>
+                    </article>
+
+                    <article class="topic-card" data-title="The DOM" data-category="javascript"
+                        data-difficulty="intermediate">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>The DOM</h3>
+
+                        <p>Category: JavaScript</p>
+                        <p>Difficulty: Intermediate</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Events" data-category="javascript"
+                        data-difficulty="intermediate">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Events</h3>
+
+                        <p>Category: JavaScript</p>
+                        <p>Difficulty: Intermediate</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Arrays" data-category="javascript"
+                        data-difficulty="intermediate">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Arrays</h3>
+
+                        <p>Category: JavaScript</p>
+                        <p>Difficulty: Intermediate</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Array Methods" data-category="javascript"
+                        data-difficulty="advanced">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Array Methods</h3>
+
+                        <p>Category: JavaScript</p>
+                        <p>Difficulty: Advanced</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Objects" data-category="javascript"
+                        data-difficulty="intermediate">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Objects</h3>
+
+                        <p>Category: JavaScript</p>
+                        <p>Difficulty: Intermediate</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Sorting and Filtering" data-category="javascript"
+                        data-difficulty="advanced">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Sorting and Filtering</h3>
+
+                        <p>Category: JavaScript</p>
+                        <p>Difficulty: Advanced</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Mobile First Design" data-category="responsive-design"
+                        data-difficulty="intermediate">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Mobile First Design</h3>
+
+                        <p>Category: Responsive Design</p>
+                        <p>Difficulty: Intermediate</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Media Queries" data-category="responsive-design"
+                        data-difficulty="intermediate">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Media Queries</h3>
+
+                        <p>Category: Responsive Design</p>
+                        <p>Difficulty: Intermediate</p>
+                    </article>
+
+                    <article class="topic-card" data-title="Accessibility and Design" data-category="accessibility"
+                        data-difficulty="advanced">
+                        <img src="images/logo.png" alt="" class="topic-card-image">
+
+                        <h3>Accessibility and Design</h3>
+
+                        <p>Category: Accessibility</p>
+                        <p>Difficulty: Advanced</p>
+                    </article>
+
+                </div>
+
+                <p id="no-results-message" class="no-results-message" role="status" aria-live="polite" hidden>
+                    No topics matched your search or filter.
+                </p>
+
+            </div>
+        </section>
+
+        <aside class="topics-help">
+            <div class="section-container help-container">
+
+                <div class="help-icon" aria-hidden="true">
+                    ★
+                </div>
+
+                <div>
+                    <h2>
+                        Can’t find what you’re looking for?
+                    </h2>
+
+                    <p>
+                        Enter a topic title in the search field or use the
+                        category and sorting controls above.
+                    </p>
+                </div>
+
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-info">
+                <h2>Web Dev Toolkit</h2>
+
+                <p>&copy; 2026 Web Dev Toolkit</p>
+
+                <p>April Ferris | WDD 131</p>
+            </div>
+
+            <div class="footer-connect">
+                <h2>Connect</h2>
+
+                <div class="social-links">
+
+                    <a href="https://github.com/bossbabe50af" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/april-f-883bb636b/" target="_blank" rel="noopener noreferrer">
+                        LinkedIn
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="scripts/topic.js"></script>
+</body>
+
+</html>
