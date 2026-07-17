@@ -1,11 +1,4 @@
-/* ========================================
-   WEB DEV TOOLKIT
-   TOPICS PAGE JAVASCRIPT
-======================================== */
-
-/* ========================================
-   CONSTANTS AND VARIABLES
-======================================== */
+/*constants and variables*/
 
 const searchInput = document.querySelector("#topic-search");
 const categoryFilter = document.querySelector("#category-filter");
@@ -24,9 +17,7 @@ const difficultyOrder = {
 
 let searchTimer;
 
-/* ========================================
-   FUNCTIONS
-======================================== */
+/*functions*/
 
 function initializeTopicsPage() {
     if (!topicGrid) {

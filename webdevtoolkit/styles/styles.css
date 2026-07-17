@@ -1,9 +1,3 @@
-/* ========================================
-   WEB DEV TOOLKIT HOME PAGE
-   index.html
-   Mobile-First Stylesheet
-   ======================================== */
-
 :root {
     --background: #f7f8fa;
     --white: #ffffff;
@@ -16,7 +10,7 @@
 }
 
 
-/* ---------- RESET AND GENERAL ---------- */
+/*reset/general*/
 
 * {
     box-sizing: border-box;
@@ -64,8 +58,7 @@ select {
 }
 
 
-/* ---------- ACCESSIBILITY ---------- */
-
+/*accessible*/
 .skip-link {
     position: absolute;
     top: -60px;
@@ -89,8 +82,7 @@ button:focus-visible {
 }
 
 
-/* ---------- HEADER ---------- */
-
+/*header*/
 .site-header {
     width: 100%;
     background-color: var(--white);
@@ -134,8 +126,7 @@ button:focus-visible {
     line-height: 1.2;
 }
 
-
-/* ---------- NAVIGATION ---------- */
+/*nav*/
 
 .main-nav {
     width: 100%;
@@ -169,8 +160,7 @@ button:focus-visible {
 }
 
 
-/* ---------- HERO ---------- */
-
+/*hero*/
 .hero {
     padding: 2.5rem 0;
     background-color: var(--white);
@@ -217,8 +207,7 @@ button:focus-visible {
 }
 
 
-/* ---------- BUTTONS ---------- */
-
+/*buttons*/
 .button {
     display: inline-block;
     padding: 0.9rem 1.8rem;
@@ -247,8 +236,7 @@ button:focus-visible {
 }
 
 
-/* ---------- ABOUT SECTION ---------- */
-
+/*about section*/
 .about-section {
     padding: 3rem 0;
     background-color: var(--background);
@@ -336,8 +324,7 @@ button:focus-visible {
 }
 
 
-/* ---------- FEATURED TOPIC ---------- */
-
+/*featured*/
 .featured-section {
     padding: 3rem 0;
     background-color: var(--white);
@@ -393,8 +380,7 @@ button:focus-visible {
 }
 
 
-/* ---------- FOOTER ---------- */
-
+/*footer*/
 .site-footer {
     padding: 2.5rem 0;
 
@@ -459,9 +445,7 @@ button:focus-visible {
 }
 
 
-/* ========================================
-   TABLET — 700PX AND ABOVE
-   ======================================== */
+/*tablet*/
 
 @media screen and (min-width: 700px) {
 
@@ -562,9 +546,7 @@ button:focus-visible {
 }
 
 
-/* ========================================
-   DESKTOP — 1000PX AND ABOVE
-   ======================================== */
+//*desktop*/
 
 @media screen and (min-width: 1000px) {
 
