@@ -201,11 +201,13 @@ button:focus-visible {
     margin: 0 auto;
 }
 
-.hero-content h2 {
-    margin: 0 0 1.25rem;
-    color: var(--primary);
-    font-size: 2rem;
-    line-height: 1.25;
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
 }
 
 .hero-description {
