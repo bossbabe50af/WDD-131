@@ -1,15 +1,6 @@
 "use strict";
 
-/* ========================================
-   WEB DEV TOOLKIT
-   HOME PAGE JAVASCRIPT
-   index.html
-   ======================================== */
-
-
-/* ========================================
-   CONSTANTS AND VARIABLES
-   ======================================== */
+/*constants and variables*/
 
 const featuredTopic = {
     title: "JavaScript Arrays",
@@ -26,9 +17,7 @@ const learnMoreButtons = document.querySelectorAll(".learn-more-button");
 const aboutCards = document.querySelectorAll(".about-card");
 
 
-/* ========================================
-   FUNCTIONS
-   ======================================== */
+/*functions*/
 
 function initializeHomePage() {
     setActiveNavigation();
@@ -111,9 +100,7 @@ function selectAboutCard(selectedCard) {
 }
 
 
-/* ========================================
-   EVENT LISTENERS
-   ======================================== */
+/*event listerners*/
 
 document.addEventListener(
     "DOMContentLoaded",

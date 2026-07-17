@@ -1,12 +1,11 @@
 /* ========================================
    WEB DEV TOOLKIT
    TOPICS PAGE JAVASCRIPT
-   ======================================== */
-
+======================================== */
 
 /* ========================================
    CONSTANTS AND VARIABLES
-   ======================================== */
+======================================== */
 
 const searchInput = document.querySelector("#topic-search");
 const categoryFilter = document.querySelector("#category-filter");
@@ -25,10 +24,9 @@ const difficultyOrder = {
 
 let searchTimer;
 
-
 /* ========================================
    FUNCTIONS
-   ======================================== */
+======================================== */
 
 function initializeTopicsPage() {
     if (!topicGrid) {
@@ -39,7 +37,6 @@ function initializeTopicsPage() {
     updateTopics(false);
 }
 
-
 function getSearchText() {
     if (!searchInput) {
         return "";
@@ -48,26 +45,44 @@ function getSearchText() {
     return searchInput.value.trim().toLowerCase();
 }
 
-
 function getSelectedCategory() {
     if (!categoryFilter) {
         return "all";
     }
 
-    return categoryFilter.value;
+    return categoryFilter.value.trim().toLowerCase();
 }
-
 
 function getSelectedSort() {
     if (!sortSelect) {
         return "az";
     }
 
-    return sortSelect.value;
+    return sortSelect.value.trim().toLowerCase();
 }
 
+function getCardTitle(card) {
+    return (card.dataset.title || "").trim();
+}
 
-function updateTopics(shouldScroll) {
+function getCardCategory(card) {
+    return (card.dataset.category || "").trim().toLowerCase();
+}
+
+function getCardDifficulty(card) {
+    return (card.dataset.difficulty || "").trim().toLowerCase();
+}
+
+function getCardSearchText(card) {
+    const title = getCardTitle(card).toLowerCase();
+    const category = getCardCategory(card);
+    const difficulty = getCardDifficulty(card);
+    const cardContent = card.textContent.toLowerCase();
+
+    return `${title} ${category} ${difficulty} ${cardContent}`;
+}
+
+function updateTopics(shouldScroll = false) {
     const searchText = getSearchText();
     const selectedCategory = getSelectedCategory();
     const selectedSort = getSelectedSort();
@@ -90,79 +105,92 @@ function updateTopics(shouldScroll) {
     }
 }
 
-
 function filterTopicCards(searchText, selectedCategory) {
     return topicCards.filter(function (card) {
-        const title = card.dataset.title.toLowerCase();
-        const category = card.dataset.category.toLowerCase();
+        const category = getCardCategory(card);
+        const searchableText = getCardSearchText(card);
 
-        /*
-         Search checks the card title only.
-
-         Examples:
-         "html" displays HTML Basics only.
-         "css" displays CSS Basics only.
-         "arrays" displays Arrays only.
-         "javascript" displays JavaScript Basics only.
-        */
         const matchesSearch =
             searchText === "" ||
-            title.includes(searchText);
+            searchableText.includes(searchText);
 
-        /*
-         Category dropdown checks data-category.
-
-         Selecting JavaScript may display multiple
-         JavaScript-category cards.
-        */
         const matchesCategory =
             selectedCategory === "all" ||
-            category === selectedCategory;
+            category === selectedCategory ||
+            category.includes(selectedCategory) ||
+            searchableText.includes(selectedCategory);
 
         return matchesSearch && matchesCategory;
     });
 }
-
 
 function sortTopicCards(cards, selectedSort) {
     const sortedCards = [...cards];
 
     if (selectedSort === "az") {
         sortedCards.sort(function (firstCard, secondCard) {
-            return firstCard.dataset.title.localeCompare(
-                secondCard.dataset.title
+            return getCardTitle(firstCard).localeCompare(
+                getCardTitle(secondCard)
             );
         });
     } else if (selectedSort === "za") {
         sortedCards.sort(function (firstCard, secondCard) {
-            return secondCard.dataset.title.localeCompare(
-                firstCard.dataset.title
+            return getCardTitle(secondCard).localeCompare(
+                getCardTitle(firstCard)
             );
         });
-    } else if (selectedSort === "beginner-advanced") {
+    } else if (
+        selectedSort === "beginner-advanced" ||
+        selectedSort === "difficulty-ascending" ||
+        selectedSort === "difficulty-asc"
+    ) {
         sortedCards.sort(function (firstCard, secondCard) {
-            return getDifficultyValue(firstCard) -
+            const difficultyDifference =
+                getDifficultyValue(firstCard) -
                 getDifficultyValue(secondCard);
+
+            if (difficultyDifference !== 0) {
+                return difficultyDifference;
+            }
+
+            return getCardTitle(firstCard).localeCompare(
+                getCardTitle(secondCard)
+            );
         });
-    } else if (selectedSort === "advanced-beginner") {
+    } else if (
+        selectedSort === "advanced-beginner" ||
+        selectedSort === "difficulty-descending" ||
+        selectedSort === "difficulty-desc"
+    ) {
         sortedCards.sort(function (firstCard, secondCard) {
-            return getDifficultyValue(secondCard) -
+            const difficultyDifference =
+                getDifficultyValue(secondCard) -
                 getDifficultyValue(firstCard);
+
+            if (difficultyDifference !== 0) {
+                return difficultyDifference;
+            }
+
+            return getCardTitle(firstCard).localeCompare(
+                getCardTitle(secondCard)
+            );
         });
     }
 
     return sortedCards;
 }
 
-
 function getDifficultyValue(card) {
-    const difficulty = card.dataset.difficulty;
+    const difficulty = getCardDifficulty(card);
 
     return difficultyOrder[difficulty] || 0;
 }
 
-
 function displayTopicCards(cards) {
+    if (!topicGrid) {
+        return;
+    }
+
     topicCards.forEach(function (card) {
         card.hidden = true;
         card.classList.remove("search-highlight");
@@ -174,10 +202,9 @@ function displayTopicCards(cards) {
     });
 
     if (noResultsMessage) {
-        noResultsMessage.hidden = cards.length > 0;
+        noResultsMessage.hidden = cards.length !== 0;
     }
 }
-
 
 function updateResultsMessage(resultCount) {
     if (!resultsStatus) {
@@ -185,17 +212,14 @@ function updateResultsMessage(resultCount) {
     }
 
     if (resultCount === 0) {
-        resultsStatus.textContent =
-            "No learning topics found.";
+        resultsStatus.textContent = "No learning topics found.";
     } else if (resultCount === 1) {
-        resultsStatus.textContent =
-            "Showing 1 learning topic.";
+        resultsStatus.textContent = "Showing 1 learning topic.";
     } else {
         resultsStatus.textContent =
             `Showing ${resultCount} learning topics.`;
     }
 }
-
 
 function scrollToFirstMatch(cards, searchText) {
     if (searchText.length < 2 || cards.length === 0) {
@@ -203,7 +227,7 @@ function scrollToFirstMatch(cards, searchText) {
     }
 
     const exactTitleMatch = cards.find(function (card) {
-        return card.dataset.title.toLowerCase() === searchText;
+        return getCardTitle(card).toLowerCase() === searchText;
     });
 
     const firstMatchingCard = exactTitleMatch || cards[0];
@@ -221,7 +245,6 @@ function scrollToFirstMatch(cards, searchText) {
         }, 1500);
     }, 100);
 }
-
 
 function applySavedTopic() {
     if (!searchInput) {
@@ -243,9 +266,11 @@ function applySavedTopic() {
 }
 
 function toggleTopicDetails(button) {
+    const details = button.nextElementSibling;
 
-    const details =
-        button.nextElementSibling;
+    if (!details) {
+        return;
+    }
 
     const isExpanded =
         button.getAttribute("aria-expanded") === "true";
@@ -256,23 +281,18 @@ function toggleTopicDetails(button) {
     );
 
     details.hidden = isExpanded;
-
     button.textContent =
-        isExpanded
-            ? "View Details"
-            : "Hide Details";
+        isExpanded ? "View Details" : "Hide Details";
 }
-
 
 /* ========================================
    EVENT LISTENERS
-   ======================================== */
+======================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
     initializeTopicsPage
 );
-
 
 if (searchInput) {
     searchInput.addEventListener("input", function () {
@@ -284,13 +304,11 @@ if (searchInput) {
     });
 }
 
-
 if (categoryFilter) {
     categoryFilter.addEventListener("change", function () {
         updateTopics(false);
     });
 }
-
 
 if (sortSelect) {
     sortSelect.addEventListener("change", function () {
@@ -299,12 +317,7 @@ if (sortSelect) {
 }
 
 detailsButtons.forEach(function (button) {
-
     button.addEventListener("click", function () {
-
         toggleTopicDetails(button);
-
     });
-
 });
-
