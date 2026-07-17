@@ -15,6 +15,7 @@ const topicGrid = document.querySelector("#topic-grid");
 const topicCards = Array.from(document.querySelectorAll(".topic-card"));
 const resultsStatus = document.querySelector("#results-status");
 const noResultsMessage = document.querySelector("#no-results-message");
+const detailsButtons = document.querySelectorAll(".details-btn");
 
 const difficultyOrder = {
     beginner: 1,
@@ -241,6 +242,27 @@ function applySavedTopic() {
     }, 100);
 }
 
+function toggleTopicDetails(button) {
+
+    const details =
+        button.nextElementSibling;
+
+    const isExpanded =
+        button.getAttribute("aria-expanded") === "true";
+
+    button.setAttribute(
+        "aria-expanded",
+        String(!isExpanded)
+    );
+
+    details.hidden = isExpanded;
+
+    button.textContent =
+        isExpanded
+            ? "View Details"
+            : "Hide Details";
+}
+
 
 /* ========================================
    EVENT LISTENERS
@@ -275,3 +297,14 @@ if (sortSelect) {
         updateTopics(false);
     });
 }
+
+detailsButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        toggleTopicDetails(button);
+
+    });
+
+});
+
