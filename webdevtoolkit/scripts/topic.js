@@ -285,9 +285,7 @@ function toggleTopicDetails(button) {
         isExpanded ? "View Details" : "Hide Details";
 }
 
-/* ========================================
-   EVENT LISTENERS
-======================================== */
+/*event listerner*/
 
 document.addEventListener(
     "DOMContentLoaded",
